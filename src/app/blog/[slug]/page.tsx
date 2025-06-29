@@ -1,20 +1,15 @@
-'use client';
-
-import { useEffect } from 'react';
-import { notFound, useRouter } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getPostBySlug } from '@/lib/blog';
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import rehypeHighlight from 'rehype-highlight';
+import ClientMarkdown from '@/components/ClientMarkdown';
 
-interface BlogPostParams {
+type BlogPostProps = {
   params: {
     slug: string;
   };
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
 function formatDate(dateString: string): string {
   const date = new Date(dateString);
@@ -25,19 +20,12 @@ function formatDate(dateString: string): string {
   });
 }
 
-export default function BlogPostPage({ params }: BlogPostParams) {
-  const router = useRouter();
+export default function BlogPostPage({ params }: BlogPostProps) {
   const { slug } = params;
   const post = getPostBySlug(slug);
 
-  useEffect(() => {
-    if (!post) {
-      notFound();
-    }
-  }, [post]);
-
   if (!post) {
-    return null; // This shouldn't render as we redirect above, but needed for TypeScript
+    notFound();
   }
 
   return (
@@ -104,12 +92,7 @@ export default function BlogPostPage({ params }: BlogPostParams) {
 
         {/* Post content */}
         <div className="mt-12 max-w-3xl mx-auto prose prose-lg">
-          <Markdown
-            remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeHighlight]}
-          >
-            {post.content}
-          </Markdown>
+          <ClientMarkdown content={post.content} />
         </div>
 
         {/* Post footer */}
