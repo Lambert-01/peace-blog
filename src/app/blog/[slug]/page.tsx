@@ -13,6 +13,7 @@ interface BlogPostParams {
   params: {
     slug: string;
   };
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
 function formatDate(dateString: string): string {
