@@ -1,11 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Projects | ISHIMWE Sangwa Peace',
-  description: 'Portfolio of projects by ISHIMWE Sangwa Peace, showcasing web development work and applications',
-};
-
 // Project type definition
 interface Project {
   id: number;

@@ -1,10 +1,5 @@
 import Image from 'next/image';
 
-export const metadata = {
-  title: 'About | ISHIMWE Sangwa Peace',
-  description: 'Learn more about ISHIMWE Sangwa Peace, a passionate Full-Stack Developer',
-};
-
 export default function AboutPage() {
   return (
     <div className="bg-white py-16 sm:py-24">
