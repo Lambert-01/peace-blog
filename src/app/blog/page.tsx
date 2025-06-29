@@ -6,11 +6,6 @@ import Image from 'next/image';
 import { getAllPostPreviews } from '@/lib/blog';
 import { BlogPostPreview } from '@/types/blog';
 
-export const metadata = {
-  title: 'Blog | ISHIMWE Sangwa Peace',
-  description: 'Read my thoughts on web development, programming, and technology',
-};
-
 function formatDate(dateString: string): string {
   const date = new Date(dateString);
   return date.toLocaleDateString('en-US', {
