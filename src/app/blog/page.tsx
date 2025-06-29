@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAllPostPreviews } from '@/lib/blog';
-import { BlogPostPreview } from '@/types/blog';
 
 function formatDate(dateString: string): string {
   const date = new Date(dateString);

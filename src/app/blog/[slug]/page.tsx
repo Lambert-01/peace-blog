@@ -4,13 +4,6 @@ import Image from 'next/image';
 import { getPostBySlug } from '@/lib/blog';
 import ClientMarkdown from '@/components/ClientMarkdown';
 
-type BlogPostProps = {
-  params: {
-    slug: string;
-  };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
-
 function formatDate(dateString: string): string {
   const date = new Date(dateString);
   return date.toLocaleDateString('en-US', {
@@ -20,7 +13,11 @@ function formatDate(dateString: string): string {
   });
 }
 
-export default function BlogPostPage({ params }: BlogPostProps) {
+export default function BlogPostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const { slug } = params;
   const post = getPostBySlug(slug);
 
