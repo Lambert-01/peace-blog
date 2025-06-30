@@ -11,76 +11,73 @@ interface Project {
   projectUrl?: string;
   githubUrl?: string;
   featured: boolean;
-  category: 'web' | 'mobile' | 'ui' | 'other';
+  category: 'data-science' | 'mathematics' | 'visualization' | 'research';
 }
 
 // Sample projects data
 const projects: Project[] = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce website with product catalog, shopping cart, user authentication, and payment integration.',
-    technologies: ['Next.js', 'TypeScript', 'MongoDB', 'Stripe', 'Tailwind CSS'],
-    imageUrl: '/images/projects/ecommerce.jpg',
-    projectUrl: 'https://ecommerce-project.example.com',
-    githubUrl: 'https://github.com/peace-ishimwe/ecommerce-project',
+    title: 'Tax Compliance Prediction Model',
+    description: 'Developed a machine learning model to predict tax compliance patterns based on historical data from Rwanda Revenue Authority.',
+    technologies: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib'],
+    imageUrl: '/images/projects/tax-model.jpg',
+    githubUrl: 'https://github.com/peacesangwa/tax-compliance-prediction',
     featured: true,
-    category: 'web',
+    category: 'data-science',
   },
   {
     id: 2,
-    title: 'Task Management App',
-    description: 'A productivity application that helps users manage their tasks, set deadlines, and track progress with a clean, intuitive interface.',
-    technologies: ['React Native', 'Firebase', 'Redux', 'Expo'],
-    imageUrl: '/images/projects/taskapp.jpg',
-    projectUrl: 'https://taskapp-project.example.com',
-    githubUrl: 'https://github.com/peace-ishimwe/taskapp-project',
+    title: 'Water Access Data Visualization',
+    description: 'Interactive dashboard visualizing water access data collected in Bugesera District, Rwanda in collaboration with WaterAid.',
+    technologies: ['Power BI', 'Excel', 'Kobo Toolbox', 'Data Cleaning'],
+    imageUrl: '/images/projects/water-viz.jpg',
+    projectUrl: 'https://wateraid-dashboard.example.com',
+    githubUrl: 'https://github.com/peacesangwa/water-access-visualization',
     featured: true,
-    category: 'mobile',
+    category: 'visualization',
   },
   {
     id: 3,
-    title: 'Analytics Dashboard',
-    description: 'Interactive dashboard for visualizing business data with customizable widgets, filtering options, and export capabilities.',
-    technologies: ['React', 'D3.js', 'Node.js', 'Express', 'PostgreSQL'],
-    imageUrl: '/images/projects/dashboard.jpg',
-    projectUrl: 'https://analytics-dashboard.example.com',
-    githubUrl: 'https://github.com/peace-ishimwe/analytics-dashboard',
+    title: 'Mathematics Education Platform',
+    description: 'Online platform for mathematics students featuring interactive tutorials, problem sets, and peer tutoring coordination for the Mathematics and Statistics Students\' Association.',
+    technologies: ['Python', 'Django', 'JavaScript', 'LaTeX', 'PostgreSQL'],
+    imageUrl: '/images/projects/math-platform.jpg',
+    projectUrl: 'https://msar-learning.example.com',
+    githubUrl: 'https://github.com/peacesangwa/msar-education-platform',
     featured: true,
-    category: 'web',
+    category: 'mathematics',
   },
   {
     id: 4,
-    title: 'Portfolio Website Template',
-    description: 'A customizable template for professional portfolios with smooth animations and responsive design.',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'GSAP'],
-    imageUrl: '/images/projects/portfolio.jpg',
-    projectUrl: 'https://portfolio-template.example.com',
-    githubUrl: 'https://github.com/peace-ishimwe/portfolio-template',
+    title: 'Statistical Analysis of Student Performance',
+    description: 'Research project analyzing factors affecting mathematics performance among university students in Rwanda.',
+    technologies: ['R', 'Statistical Analysis', 'Hypothesis Testing', 'Data Visualization'],
+    imageUrl: '/images/projects/stats-analysis.jpg',
+    githubUrl: 'https://github.com/peacesangwa/student-performance-analysis',
     featured: false,
-    category: 'web',
+    category: 'research',
   },
   {
     id: 5,
-    title: 'Weather Forecast App',
-    description: 'Mobile application that provides real-time weather forecasts, alerts, and historical weather data for locations worldwide.',
-    technologies: ['Flutter', 'Dart', 'Weather API', 'Firebase'],
-    imageUrl: '/images/projects/weather.jpg',
-    projectUrl: 'https://weather-app.example.com',
-    githubUrl: 'https://github.com/peace-ishimwe/weather-app',
+    title: 'Numerical Methods Implementation',
+    description: 'Collection of implementations of various numerical methods for solving mathematical problems, with interactive demonstrations.',
+    technologies: ['Python', 'NumPy', 'Matplotlib', 'Jupyter Notebooks'],
+    imageUrl: '/images/projects/numerical-methods.jpg',
+    githubUrl: 'https://github.com/peacesangwa/numerical-methods',
     featured: false,
-    category: 'mobile',
+    category: 'mathematics',
   },
   {
     id: 6,
-    title: 'Restaurant Booking System',
-    description: 'Web application for restaurant table reservations, with admin dashboard for staff to manage bookings and customer information.',
-    technologies: ['Next.js', 'MongoDB', 'Tailwind CSS', 'JWT'],
-    imageUrl: '/images/projects/restaurant.jpg',
-    projectUrl: 'https://restaurant-booking.example.com',
-    githubUrl: 'https://github.com/peace-ishimwe/restaurant-booking',
+    title: 'MSAR Data Science Competition Platform',
+    description: 'Web application for managing the Mathematics and Statistics Students\' Association Data Science Competition, including team registration, submission handling, and leaderboard.',
+    technologies: ['Python', 'Flask', 'SQLite', 'Bootstrap', 'JavaScript'],
+    imageUrl: '/images/projects/competition-platform.jpg',
+    projectUrl: 'https://msar-competition.example.com',
+    githubUrl: 'https://github.com/peacesangwa/msar-competition',
     featured: false,
-    category: 'web',
+    category: 'data-science',
   },
 ];
 
@@ -91,7 +88,7 @@ export default function ProjectsPage() {
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Projects</h1>
           <p className="mt-2 text-lg leading-8 text-gray-600">
-            A showcase of my work, personal projects, and contributions.
+            A showcase of my data science, mathematical modeling, and research projects.
           </p>
         </div>
         
@@ -113,24 +110,24 @@ export default function ProjectsPage() {
           
           {/* Categories */}
           <div className="mt-8 grid grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:grid-cols-3">
-            {/* Web Development */}
+            {/* Data Science */}
             <div>
-              <h3 className="text-lg font-semibold leading-8 text-primary">Web Development</h3>
+              <h3 className="text-lg font-semibold leading-8 text-primary">Data Science</h3>
               <div className="mt-6 space-y-10">
                 {projects
-                  .filter((project) => project.category === 'web')
+                  .filter((project) => project.category === 'data-science')
                   .map((project) => (
                     <ProjectListItem key={project.id} project={project} />
                   ))}
               </div>
             </div>
             
-            {/* Mobile Development */}
+            {/* Mathematics */}
             <div>
-              <h3 className="text-lg font-semibold leading-8 text-primary">Mobile Development</h3>
+              <h3 className="text-lg font-semibold leading-8 text-primary">Mathematics</h3>
               <div className="mt-6 space-y-10">
                 {projects
-                  .filter((project) => project.category === 'mobile')
+                  .filter((project) => project.category === 'mathematics')
                   .map((project) => (
                     <ProjectListItem key={project.id} project={project} />
                   ))}
@@ -139,15 +136,15 @@ export default function ProjectsPage() {
             
             {/* Other Projects */}
             <div>
-              <h3 className="text-lg font-semibold leading-8 text-primary">UI/UX & Others</h3>
+              <h3 className="text-lg font-semibold leading-8 text-primary">Visualization & Research</h3>
               <div className="mt-6 space-y-10">
                 {projects
-                  .filter((project) => project.category === 'ui' || project.category === 'other')
+                  .filter((project) => project.category === 'visualization' || project.category === 'research')
                   .map((project) => (
                     <ProjectListItem key={project.id} project={project} />
                   ))}
-                {/* Placeholder if no UI/UX projects */}
-                {!projects.some(p => p.category === 'ui' || p.category === 'other') && (
+                {/* Placeholder if no projects */}
+                {!projects.some(p => p.category === 'visualization' || p.category === 'research') && (
                   <div className="text-gray-500">No projects in this category yet.</div>
                 )}
               </div>
@@ -249,13 +246,18 @@ function ProjectListItem({ project }: { project: Project }) {
         {project.technologies.slice(0, 4).map((tech) => (
           <span
             key={tech}
-            className="inline-flex items-center rounded-md bg-gray-50 px-1.5 py-0.5 text-xs font-medium text-gray-600"
+            className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600"
           >
             {tech}
           </span>
         ))}
+        {project.technologies.length > 4 && (
+          <span className="inline-flex items-center text-xs font-medium text-gray-500">
+            +{project.technologies.length - 4} more
+          </span>
+        )}
       </div>
-      <div className="mt-3 flex gap-3 text-sm">
+      <div className="mt-3 flex space-x-3 text-sm">
         {project.projectUrl && (
           <a
             href={project.projectUrl}
@@ -271,7 +273,7 @@ function ProjectListItem({ project }: { project: Project }) {
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-gray-600 hover:text-gray-900"
+            className="font-medium text-gray-700 hover:text-gray-900"
           >
             GitHub
           </a>
